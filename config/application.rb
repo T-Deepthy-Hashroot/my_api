@@ -19,6 +19,9 @@ Bundler.require(*Rails.groups)
 
 module MyApi
   class Application < Rails::Application
+    # Use the responders controller from the responders gem
+    config.app_generators.scaffold_controller :responders_controller
+
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.2
 
@@ -32,5 +35,4 @@ module MyApi
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
   end
- 
 end
